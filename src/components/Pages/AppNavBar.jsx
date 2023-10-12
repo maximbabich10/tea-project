@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 
 export default function AppNavBar({ currentUser, logoutHandler }) {
-    console.log(currentUser);
     return (
         <Navbar bg="light" variant="light">
             <Container>
