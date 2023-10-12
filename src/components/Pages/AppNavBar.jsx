@@ -8,7 +8,7 @@ export default function AppNavBar({ currentUser, logoutHandler }) {
     return (
         <Navbar bg="light" variant="light">
             <Container>
-                <Navbar.Brand href="/">Navbar</Navbar.Brand>
+                <Navbar.Brand>Tea</Navbar.Brand>
                 <Nav className="me-auto flex-grow-1">
                     <Nav.Link href="/">Home</Nav.Link>
                 </Nav>

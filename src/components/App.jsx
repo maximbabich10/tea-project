@@ -5,6 +5,7 @@ import SignInPage from './Pages/SignInPage';
 import SignUpPage from './Pages/SignUpPage';
 import useUser from '../../customHooks/useUser';
 import AppNavBar from './Pages/AppNavBar'
+import AdminPage from './Pages/AdminPage';
 
 
 function App({ user }) {
@@ -17,6 +18,8 @@ function App({ user }) {
       <Routes>
         <Route path="/auth/signin" element={<SignInPage signInHandler={signInHandler} />} />
         <Route path="/auth/signup" element={<SignUpPage signUpHandler={signUpHandler} />} />
+        <Route path="/admin/page" element={<AdminPage />} />
+
 
       </Routes>
     </Container>

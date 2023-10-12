@@ -9,6 +9,7 @@ import apiAuthRouter from './routes/apiAuthRouter';
 import { signInUserMiddleware } from './middlewares/authMiddlewares';
 import authRouter from './routes/authRouter';
 import resLocals from './middlewares/resLocals'
+import adminRouter from './routes/adminRouter';
 
 require('dotenv').config();
 
@@ -16,9 +17,6 @@ const SessionFileStore = sessionFileStore(session);
 
 const PORT = process.env.SERVER_PORT || 3000;
 const app = express();
-
-
-
 
 app.engine('jsx', jsxRender);
 app.set('view engine', 'jsx');
@@ -53,6 +51,8 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/api/auth', apiAuthRouter);
 app.use('/auth', signInUserMiddleware, authRouter);
+app.use('/admin', adminRouter);
+
 
 
 

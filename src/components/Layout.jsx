@@ -3,6 +3,7 @@ import { StaticRouter } from 'react-router-dom/server';
 import App from './App';
 
 export default function Layout({ initState }) {
+
   return (
     <html lang="en">
       <head>
