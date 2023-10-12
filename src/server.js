@@ -9,6 +9,7 @@ import apiAuthRouter from './routes/apiAuthRouter';
 import { signInUserMiddleware } from './middlewares/authMiddlewares';
 import authRouter from './routes/authRouter';
 import resLocals from './middlewares/resLocals'
+import adminRouter from './routes/adminRouter';
 
 require('dotenv').config();
 
@@ -53,6 +54,8 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/api/auth', apiAuthRouter);
 app.use('/auth', signInUserMiddleware, authRouter);
+app.use('/adminpage', adminRouter);
+
 
 
 
