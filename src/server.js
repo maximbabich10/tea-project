@@ -18,9 +18,6 @@ const SessionFileStore = sessionFileStore(session);
 const PORT = process.env.SERVER_PORT || 3000;
 const app = express();
 
-
-
-
 app.engine('jsx', jsxRender);
 app.set('view engine', 'jsx');
 app.set('views', path.join(__dirname, 'components'));
@@ -54,8 +51,7 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/api/auth', apiAuthRouter);
 app.use('/auth', signInUserMiddleware, authRouter);
-app.use('/adminpage', adminRouter);
-
+app.use('/admin', adminRouter);
 
 
 

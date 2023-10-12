@@ -2,7 +2,7 @@ import { Router } from 'express';
 
 const adminRouter = Router();
 
-adminRouter.get('/', async (req, res) => {
+adminRouter.get('/page', async (req, res) => {
     res.render('Layout', {})
 })
 
