@@ -19,7 +19,7 @@ apiAuthRouter.post('/signup', async (req, res) => {
             role_id: 2
         },
     });
-    //    console.log(user)
+    console.log(user)
     if (!created) {
         res.status(400).json({ message: 'email exists' });
     }
@@ -45,10 +45,10 @@ apiAuthRouter.post('/signin', async (req, res) => {
         },
     });
 
-    if (!user || !await bcrypt.compare(password, user.password)) {
-        res.status(400).json({ message: 'user not found' });
-        return;
-    }
+    // if (!user || !await bcrypt.compare(password, user.password)) {
+    //     res.status(400).json({ message: 'user not found' });
+    //     return;
+    // }
 
     req.session.user = {
         name: user.name,

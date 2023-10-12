@@ -57,5 +57,4 @@ app.use('/auth', signInUserMiddleware, authRouter);
 
 
 
-
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

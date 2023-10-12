@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 
 export default function AppNavBar({ currentUser, logoutHandler }) {
-    console.log(currentUser);
     return (
         <Navbar bg="light" variant="light">
             <Container>
@@ -33,6 +32,8 @@ export default function AppNavBar({ currentUser, logoutHandler }) {
                             <Nav.Link href="/auth/signin">signin</Nav.Link>
                         </>
                     )}
+                {currentUser?.role === 1 &&
+                    (<Nav.Link href='/admin/page'>admin</Nav.Link>)}
             </Container>
         </Navbar>
     );
