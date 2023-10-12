@@ -16,6 +16,17 @@ module.exports = {
       },
 
     ], {});
+
+    await queryInterface.bulkInsert('Users', [
+      {
+        name: 'admin',
+        email: 'admin@admin',
+        password: '123',
+        role_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    ], {});
   },
 
   async down(queryInterface, Sequelize) {

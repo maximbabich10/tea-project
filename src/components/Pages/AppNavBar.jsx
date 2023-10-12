@@ -33,6 +33,8 @@ export default function AppNavBar({ currentUser, logoutHandler }) {
                             <Nav.Link href="/auth/signin">signin</Nav.Link>
                         </>
                     )}
+                {currentUser?.role === 1 &&
+                    (<Nav.Link href='/admin/page'>admin</Nav.Link>)}
             </Container>
         </Navbar>
     );
