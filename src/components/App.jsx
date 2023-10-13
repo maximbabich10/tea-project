@@ -6,9 +6,10 @@ import SignUpPage from './Pages/SignUpPage';
 import useUser from '../../customHooks/useUser';
 import AppNavBar from './Pages/AppNavBar'
 import AdminPage from './Pages/AdminPage';
+import TeaCard from './Pages/TeaCard';
 
 
-function App({ user }) {
+function App({ user, allTeas, tea }) {
   const {
     currentUser, signInHandler, signUpHandler, logoutHandler,
   } = useUser(user);
@@ -18,8 +19,9 @@ function App({ user }) {
       <Routes>
         <Route path="/auth/signin" element={<SignInPage signInHandler={signInHandler} />} />
         <Route path="/auth/signup" element={<SignUpPage signUpHandler={signUpHandler} />} />
-        <Route path="/admin/page" element={<AdminPage />} />
-
+        <Route path="/admin/page" element={<AdminPage allTeas={allTeas} />} />
+        <Route path="/:id" element={<TeaCard tea={tea}/>} />
+        
 
       </Routes>
     </Container>
